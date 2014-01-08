@@ -8,7 +8,7 @@ exports.verify = function(req, res){
   var nonce = req.query.nonce;
   var check = false;
   console.log("signature: ", signature, "\nechostr: ", echostr, "\ntimestamp: ", timestamp, "\nnonce: ", nonce);
-  var check = cs.checksignature(signature, timestamp, nonce, token);
+  var check = cs.checkSignature(signature, timestamp, nonce, token);
 
   if (check){
     res.write(echostr);
